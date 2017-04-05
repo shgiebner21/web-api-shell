@@ -18,16 +18,17 @@ class Park extends Component {
             </div>
             </li>
             </ul>
+          </div>
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => ({
-  state.children
+  children: state.children
 })
 const mapActionsToProps = (dispatch) => ({
-  onSelectTrack: (e) => dispatch({type: 'UPDATE_FOR_TRACK'})
+
 })
 const connector = connect(mapStateToProps, mapActionsToProps)
 

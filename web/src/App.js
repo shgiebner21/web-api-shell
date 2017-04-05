@@ -17,7 +17,7 @@ class App extends Component {
       <BrowserRouter>
         <div className='pa1'>
           <header>
-            <h1 className="bg-light-green mw7 center pa1 br2-ns ba b--black-10">
+            <h1 className="bg-light-green mw7 center pa1 br2-ns ba b--black-10 tc">
               Parker and Parks</h1>
           </header>
           <main>
