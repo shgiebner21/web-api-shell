@@ -5,22 +5,21 @@ import TextField from '../components/input-text'
 import BasicButton from '../components/basic-button'
 
 
-const getFamily = (id) => fetch('http://localhost:5000/family' + id)
-
-const postFamily = (family) => {
-  family.familyId = family.parentFirst + family.parentLast +
+const updateFamilyId = (family) => {
+  return family.familyId = family.parentFirst + family.parentLast +
     family.eMail + family.cellPhone
+}
 
-  fetch('http://localhost:5000/family', {
+const postFamily = (family) => fetch('http://localhost:8080/family', {
     headers: {
       'Content-Type': 'application/json'
     },
     method: 'POST',
     body: JSON.stringify(family)
   })
-}
 
-const putFamily = (family) => fetch('http://localhost:5000/family' + family.id, {
+
+const putFamily = (family) => fetch('http://localhost:8080/family' + family.id, {
   headers: {
     'Content-Type': 'application/json'
   },
@@ -29,18 +28,11 @@ const putFamily = (family) => fetch('http://localhost:5000/family' + family.id, 
 })
 
 class Signup extends Component {
-  componentDidMount() {
-    if (this.props.match.params.id) {
-      getFamily(this.props.match.params.id)
-        .then(res => res.json())
-        .then(family => this.props.set(family))
-    }
-  }
 
   render() {
     const props = this.props
     return(
-      <div>
+      <div className='bg-light-green'>
         <h2>Signup</h2>
         <form onSubmit={props.submit(props.history, props.family)}>
           <TextField label='Parent First Name'
@@ -102,8 +94,14 @@ class Signup extends Component {
           <BasicButton backgroundColor="dark-blue"
                        color="white-80" >Signup</BasicButton>
           <a className='link f6' href='#'
-                      onClick={e => props.history.goBack()}>Cancel</a>
+             onClick={e => props.history.goBack()}>Cancel</a>
         </form>
+        <footer className="ph2-m ph6-l mid-gray ma2">
+          <div className="tc mt3">
+            <img className='h4 w4 ba b--black-05 pa2' src='/CPC-small-logo.png'
+              alt='CPC small logo'/>
+          </div>
+        </footer>
       </div>
     )
   }
@@ -126,20 +124,23 @@ const mapActionsToProps = (dispatch) => ({
   changePassword: (e) => dispatch({type: 'SET_PASSWORD', payload: e.target.value}),
   submit: (history, family) => (e) => {
     e.preventDefault()
-    if (family.id) {
+
+    if (family.length === 0 || family.parentFirst.length < 2 || family.parentLast.length < 2 || family.eMail.length < 2
+        || family.password.length < 2) {
+          return alert('Required data is missing.')
+    } else if(family.id) {
       putFamily(family).then(res => res.json())
         .then(res => {
-          dispatch({type: 'CLEAR_FAMILY'})
+          dispatch({type: 'SET_FAMILY'})
           history.push('/family' + family.id)
         })
     } else {
-      postFamily(family)
-      console.log(family)
-      .then(family => family.json())
-      console.log('res is ', family)
-      .then(res => {dispatch({type: 'CLEAR_FAMILY'})
-                    history.push('/children')
-                    }).catch(err => console.log(err.message))
+      updateFamilyId(family)
+      postFamily(family).then(res => res.json())
+        .then(res => {
+          dispatch({type: 'SET_FAMILY', payload: family})
+          history.push('/children')
+        })
     }
   }
 })

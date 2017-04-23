@@ -1,32 +1,9 @@
 import {createStore, combineReducers} from 'redux'
 import {set, lensProp} from 'ramda'
 
-const initialFamily = {
-  familyId: '',
-  parentFirst: '',
-  parentLast: '',
-  eMail: '',
-  cellPhone: '',
-  streetAddress: '',
-  streetAddress2: '',
-  city: '',
-  state: '',
-  zip: '',
-  password: ''
-}
 
-const login = (state={}, action) => {
-  switch (action.type) {
-    case 'VALIDATE_EMAIL':
-      return state
-    case 'VALIDATE_PASSWORD':
-      return state
-    default:
-      return state
-  }
-}
 
-const family = (state=initialFamily, action) => {
+const family = (state=[], action) => {
   switch (action.type) {
     case 'SET_PARENT_FIRST':
       return set(lensProp('parentFirst'), action.payload, state)
@@ -50,27 +27,34 @@ const family = (state=initialFamily, action) => {
         return set(lensProp('password'), action.payload, state)
       case 'SET_FAMILY':
         return action.payload
-      case 'CLEAR_FAMILY':
-        return {}
     default:
       return state
   }
 }
 
-const initialChildren = {
-  familyId: '',
-  childName: '',
-  childAge: '',
-  childsSex: '',
-  childNotes: ''
+const logInFamily = (state=[], action) => {
+  switch (action.type) {
+    case 'SET_LOGIN_FAMILY':
+      return action.payload
+    default:
+      return state
+  }
 }
 
-const children = (state=initialChildren, action) => {
+const families = (state=[], action) => {
   switch (action.type) {
-    case 'SET_CHILD':
+    case 'SET_FAMILIES':
       return action.payload
-    case 'SET_FAMILY_ID':
-      return set(lensProp('familyId'), action.payload, state)
+    default:
+      return state
+  }
+}
+
+
+const children = (state=[], action) => {
+  switch (action.type) {
+    case 'SET_CHILDREN':
+      return action.payload
     case 'SET_CHILD_NAME':
       return set(lensProp('childName'), action.payload, state)
     case 'SET_CHILD_AGE':
@@ -80,31 +64,34 @@ const children = (state=initialChildren, action) => {
     case 'SET_CHILD_NOTES':
       return set(lensProp('childNotes'), action.payload, state)
     case 'CLEAR_CHILDREN':
-      return {}
+      return []
     default:
       return state
   }
 }
 
-const initialPark = {
-  park: '',
-  activity: []
-}
 
-const park = (state=initialPark, action) => {
+const validate = (state=[], action) => {
   switch (action.type) {
+    case 'SET_VALIDATION':
+      return action.payload
+    case 'VALIDATE_EMAIL':
+      return set(lensProp('eMail'), action.payload, state)
+    case 'VALIDATE_PASSWORD':
+      return set(lensProp('password'), action.payload, state)
     default:
       return state
   }
 }
-
 
 
 const store = createStore(
   combineReducers({
     family,
+    families,
+    logInFamily,
     children,
-    park
+    validate
   })
 )
 

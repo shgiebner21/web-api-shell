@@ -1,198 +1,26 @@
 {
   "family": [
-    {
-      "familyId": "ElizabethWagenermom@gmail.com843-123-4567",
-      "parentFirst": "Elizabeth",
-      "parentLast": "Wagener",
-      "eMail": "mom@gmail.com",
-      "cellPhone": "843-123-4567",
-      "streetAddress": "121 Soccer Field Road",
-      "streetAddress2": "",
-      "city": "James Island",
-      "state": "SC",
-      "zip": "29403",
-      "id": 1
-    },
-    {
-      "familyId": "RussellGiebnerrussell@gmail.com123-456-5555",
-      "parentFirst": "Russell",
-      "parentLast": "Giebner",
-      "eMail": "russell@gmail.com",
-      "cellPhone": "123-456-5555",
-      "streetAddress": "211 Grur Street",
-      "streetAddress2": "",
-      "city": "Grur",
-      "state": "SC",
-      "zip": "29403",
-      "id": 2
-    },
-    {
-      "familyId": "JenKloskakloska@lowes.com555-555-5555",
-      "parentFirst": "Jen",
-      "parentLast": "Kloska",
-      "eMail": "kloska@lowes.com",
-      "cellPhone": "555-555-5555",
-      "streetAddress": "555 Charlotte Ave",
-      "streetAddress2": "",
-      "city": "Charlotte",
-      "state": "N",
-      "zip": "55555",
-      "password": "",
-      "id": 3
-    },
-    {
-      "familyId": "JenKloskakloska@lowes.com555-555-5555",
-      "parentFirst": "Jen",
-      "parentLast": "Kloska",
-      "eMail": "kloska@lowes.com",
-      "cellPhone": "555-555-5555",
-      "streetAddress": "5555 Main Street",
-      "streetAddress2": "",
-      "city": "Charlotte",
-      "state": "N",
-      "zip": "55555",
-      "password": "",
-      "id": 4
-    }
   ],
   "children": [
-    {
-      "familyId": "ElizabethWagenermom@gmail.com843-123-4567",
-      "childName": "Jacob",
-      "childAge": "5",
-      "childsSex": "M",
-      "points": null,
-      "childNotes": "He's a really cool kid",
-      "id": 1
-    },
-    {
-      "familyId": "ElizabethWagenermom@gmail.com843-123-4567",
-      "childName": "Lilly",
-      "childAge": "3",
-      "childsSex": "F",
-      "points": null,
-      "childNotes": "Shes pretty awesome too!",
-      "id": 2
-    },
-    {
-      "familyId": "RussellGiebnerrussell@gmail.com123-456-5555",
-      "childName": "Chandler",
-      "childAge": "19",
-      "childsSex": "M",
-      "points": null,
-      "childNotes": "This kid is tall",
-      "id": 3
-    },
-    {
-      "familyId": "RussellGiebnerrussell@gmail.com123-456-5555",
-      "childName": "Anna",
-      "childAge": "15",
-      "childsSex": "F",
-      "points": null,
-      "childNotes": "She insists i'm giving her my car someday",
-      "id": 4
-    },
-    {
-      "familyId": "JenKloskakloska@lowes.com555-555-5555",
-      "childName": "Lucy",
-      "childAge": "5",
-      "childsSex": "F",
-      "childNotes": "She's a dancing fool",
-      "id": 5
-    },
-    {
-      "familyId": "JenKloskakloska@lowes.com555-555-5555",
-      "childName": "Little Kloska2",
-      "childAge": "3",
-      "childsSex": "F",
-      "childNotes": "This one is fearless",
-      "id": 6
-    },
-    {
-      "familyId": "",
-      "childName": "",
-      "childAge": "",
-      "childsSex": "",
-      "childNotes": "",
-      "id": 7
-    }
   ],
   "parks": [
     {
       "parkName": "Hampton Park",
       "parkLat": "5",
       "parkLong": "M",
+      "activity": [
+      ],
       "id": 1
     },
     {
       "parkName": "Colonial Lake",
       "parkLat": "5",
       "parkLong": "M",
+      "activity": [
+      ],
       "id": 2
     }
   ],
   "badges": [
-    {
-      "Fitness": "fitness",
-      "image": "/sport-1320602_1920.jpg",
-      "pointsRequired": 200
-    },
-    {
-      "scholar": "Scholar",
-      "image": "/scholar.pdf",
-      "pointsRequired": 200
-    },
-    {
-      "goodSamaritan": "Good Samaritan",
-      "image": "/volunteer-1358074_1280.png",
-      "pointsRequired": 200
-    },
-    {
-      "parkRange": "Park Ranger",
-      "image": "/park_ranger.pdf",
-      "pointsRequired": 500
-    }
-  ],
-  "activity": [
-    {
-      "runTrack": "Run around the track",
-      "pointValue": 20,
-      "type": "fitness"
-    },
-    {
-      "denmarkVesey": "Denmark Vesey",
-      "image": "statue.img",
-      "location": "Hampton Park",
-      "story": "",
-      "pointValue": 20,
-      "type": "learning"
-    },
-    {
-      "runTrack": "Run around the track",
-      "pointValue": 20,
-      "type": "fitness"
-    },
-    {
-      "bandstand": "Band Stand",
-      "image": "bandstand.img",
-      "location": "Hampton Park",
-      "story": "",
-      "pointValue": 10,
-      "type": "learning"
-    },
-    {
-      "lake": "Lake",
-      "image": "lake.img",
-      "location": "Colonial Lake",
-      "story": "",
-      "type": "learning"
-    },
-    {
-      "trees": "Trees",
-      "image": "trees.img",
-      "location": "Colonial Lake",
-      "story": "",
-      "type": "learning"
-    }
   ]
 }
