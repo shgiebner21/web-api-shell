@@ -36,7 +36,9 @@ class Pharmacies extends Component {
     console.log('pharmacies props are, ', props)
 
     const listPharmacies = (pharmacy) => {
-      return <li className="ph3 pv3 bb b--light-silver">{pharmacy}</li>
+      return  <li className="ph3 pv3 bb b--light-silver">
+                {pharmacy}
+              </li>
     }
 
 
