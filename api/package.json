@@ -4,12 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "json-server db.json --port 5000"
+    "start": "PORT=5984 node app.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "json-server": "^0.9.6"
+    "body-parser": "^1.18.2",
+    "cloudant": "^1.10.0",
+    "cors": "^2.8.4",
+    "express": "^4.16.2",
+    "json-server": "^0.9.6",
+    "node-http-error": "^2.0.0",
+    "pouchdb-http": "^6.0.2",
+    "pouchdb-mapreduce": "^6.3.4",
+    "ramda": "^0.25.0"
   }
 }

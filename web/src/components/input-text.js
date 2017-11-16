@@ -1,31 +1,36 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 
 const TextField = (props) => {
   const width = props.width ? `w-${props.width}` : 'w-80'
 
   return (
-    <div className="measure">
-      <label className='f6 b db mb2'>{props.label}
-          {props.optional && <span className='normal black-60' >(optional)</span>}
+    <div>
+      <label className='f5 b db mb2'>
+        {props.label}
+        {props.optional && <span className='normal black-60' >(optional)</span> }
       </label>
       <small>{props.help}</small>
-      <input id={props.label}
-             className={`input-reset ba b--black-20 pa2 mb2 db ${width}`}
-             type='text'
-             value={props.value}
-             onChange={props.onChange}
+
+      <input  id={props.label}
+              className={`input-reset ba b--black-20 pa2 mb2 db ${width}`}
+              type={props.type}
+              placeholder={props.placeholder}
+              value={props.value}
+              onChange={props.onChange}
       />
     </div>
   )
 }
 
 TextField.propTypes = {
-  label: React.PropTypes.string.isRequired,
-  value: React.PropTypes.string.isRequired,
-  onChange: React.PropTypes.func.isRequired,
-  optional: React.PropTypes.bool,
-  help: React.PropTypes.string,
-  width: React.PropTypes.string
+  label: PropTypes.string.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  optional: PropTypes.bool,
+  help: PropTypes.string,
+  width: PropTypes.string
 }
 
 export default TextField
