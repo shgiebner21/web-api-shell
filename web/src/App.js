@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Route } from 'react-router-dom'
 import './App.css'
+import LandingPage from './landing'
 
 
 class App extends Component {
@@ -9,7 +10,7 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <main>
-            <Route exact path='/' component={Login} />
+            <Route exact path='/' component={LandingPage} />
 
           </main>
           {}
